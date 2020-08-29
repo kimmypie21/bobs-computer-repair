@@ -1,17 +1,45 @@
+  /*
+============================================
+; Title: Bob's Computer Repair Shop
+; Author: Kimberly Pierce
+; Date: August 2020
+; Modified By: Kimberly Pierce
+; Description: Bob's Computer Repair Shop
+;===========================================
+*/
+
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #e0e0e0;
+}
 
 .nav button{
   margin: 1%;
 }
 .nav{
-  background-color: lightgrey;
+  background-color: #aeaeae;
   height: 80px;
 }
 
 .logo{
-  
+
   margin: 2%;
+}
+
+.services{
+  margin: 4%;
+}
+
+.services li{
+  padding: 1%;
+  list-style-type: none;
+}
+
+
+.card-title{
+  background-color: #4bacb8;
+  color: white;
+  padding: 1%;
 }

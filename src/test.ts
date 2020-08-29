@@ -1,3 +1,13 @@
+  /*
+============================================
+; Title: Bob's Computer Repair Shop
+; Author: Kimberly Pierce
+; Date: August 2020
+; Modified By: Kimberly Pierce
+; Description: Bob's Computer Repair Shop
+;===========================================
+*/
+
 // This file is required by karma.conf.js and loads recursively all the .spec and framework files
 
 import 'zone.js/dist/zone-testing';

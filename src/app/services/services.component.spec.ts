@@ -1,3 +1,13 @@
+  /*
+============================================
+; Title: Bob's Computer Repair Shop
+; Author: Kimberly Pierce
+; Date: August 2020
+; Modified By: Kimberly Pierce
+; Description: Bob's Computer Repair Shop
+;===========================================
+*/
+
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ServicesComponent } from './services.component';

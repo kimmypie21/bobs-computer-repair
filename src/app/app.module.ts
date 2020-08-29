@@ -1,8 +1,19 @@
+  /*
+============================================
+; Title: Bob's Computer Repair Shop
+; Author: Kimberly Pierce
+; Date: August 2020
+; Modified By: Kimberly Pierce
+; Description: Bob's Computer Repair Shop
+;===========================================
+*/
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +33,9 @@ import { AboutComponent } from './about/about.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
