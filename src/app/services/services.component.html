@@ -10,7 +10,7 @@
 */
 -->
 
-
+<!--
 <div class="services">
 
   <div class="card">
@@ -48,4 +48,18 @@
   </div>
 
 </div>
+-->
 
+<form [formGroup]="form" (ngSubmit)= 'submit()'>
+  <label formArrayName="order" *ngFor='let order of orderFormArray.controls; let i=name'>
+    <input type="checkbox" [formControlName]='i'>
+    {{ orderData[i].name}}
+  </label>
+
+<button>Submit Your Order</button>
+</form>
+
+
+
+
+-
