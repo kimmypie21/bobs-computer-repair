@@ -10,8 +10,9 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ServicesDialogComponent } from '../services-dialog/services-dialog.component';
-import { MatDialog } from '@angular/material/dialog';
-import { FormBuilder, FormGroup, FormArray, FormControl, ReactiveFormsModule } from '@angular/forms';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { FormBuilder, FormGroup, FormArray, FormControl} from '@angular/forms';
+
 
 
 @Component({
@@ -19,44 +20,55 @@ import { FormBuilder, FormGroup, FormArray, FormControl, ReactiveFormsModule } f
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css']
 })
-export class ServicesComponent implements OnInit {
 
-  form: FormGroup;
-  orderData = [
-    {name: "Password Reset", value: "$39.99"},
-    {name: "Spyware Removal" , value:"$99.99" },
-    {name: "RAM Upgrade" , value:"$129.99" },
-    {name: "Software Installation" , value: "$49.99"},
-    {name: "Tune-up" , value: "$89.99"},
-    {name: "Keyboard Cleaning" , value: "$45.00"},
-    {name: "Disk Clean-up" , value: "$149.99 "}
+export class ServicesComponent  {
+
+  orderForm: FormGroup;
+  orderData: Array<any>=[
+    {serviceName: "Password Reset", serviceCost: "$39.99"},
+    {serviceName: "Spyware Removal" , serviceCost:"$99.99" },
+    {serviceName: "RAM Upgrade" , serviceCost:"$129.99" },
+    {serviceName: "Software Installation" , serviceCost: "$49.99"},
+    {serviceName: "Tune-up" , serviceCost: "$89.99"},
+    {serviceName: "Keyboard Cleaning" , serviceCost: "$45.00"},
+    {serviceName: "Disk Clean-up" , serviceCost: "$149.99 "}
   ];
 
-  get orderFormArray(){
-    return this.form.controls.orders as FormArray;
+
+  constructor( private fb: FormBuilder, public dialog: MatDialog) {
+    this.orderForm = this.fb.group({
+      orderArray: this.fb.array([])
+    })
+  }
+  openDialog(){
+    this.dialog.open(ServicesDialogComponent),
+    console.log(this.orderForm.value);
   }
 
-  constructor( private dialog: MatDialog, private formBuilder: FormBuilder) {
-    this.form = this.formBuilder.group({
-      order: new FormArray ([])
-    });
-    this.addCheckboxes();
-   }
+  onCheckboxChange(e){
+    const orderArray: FormArray = this.orderForm.get('orderArray')as FormArray;
+      if (e.target.checked){
+        orderArray.push(new FormControl(e.target.value));
+      }else{
+        let i: number = 0;
+        orderArray.controls.forEach((item: FormControl)=>{
+          if (item.value == e.target.value){
+            orderArray.removeAt(i);
+            return;
+          }
+          i++;
+        });
+      }
+  }
 
-   private addCheckboxes(){
-     this.orderData.forEach(() => this.orderFormArray.push(new FormControl(false)));
-   }
-   submit(){
-    const selectedOrderNames = this.form.value.order
-    .map((checked, i)=> checked ? this.orderData[i].name: null)
-    .filter(v => v !== null);
-    console.log(selectedOrderNames);
-   };
 
   ngOnInit(): void {
+
   }
 
-  showOrderDetails(){
-    const dialogRef = this.dialog.open(ServicesDialogComponent);
   }
-}
+
+
+
+
+

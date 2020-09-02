@@ -48,16 +48,25 @@
   </div>
 
 </div>
+[formGroup]='orderForm' (ngSubmit)="onSubmit()"
 -->
 
-<form [formGroup]="form" (ngSubmit)= 'submit()'>
-  <label formArrayName="order" *ngFor='let order of orderFormArray.controls; let i=name'>
-    <input type="checkbox" [formControlName]='i'>
-    {{ orderData[i].name}}
-  </label>
 
-<button>Submit Your Order</button>
-</form>
+
+  <form [formGroup]='orderForm' (ngSubmit)="openDialog()" class="order-form">
+
+    <div *ngFor= "let data of orderData; let i = index">
+      <label>
+        <input type="checkbox" [value]='data.value' (change)="onCheckboxChange($event)">
+        {{ data.serviceName }}
+        {{ data.serviceCost }}
+      </label>
+    </div>
+
+    <button mat-raised-button (click)="openDialog()">Submit Your Order</button>
+
+  </form>
+
 
 
 
