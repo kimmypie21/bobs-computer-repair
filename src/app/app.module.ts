@@ -27,6 +27,7 @@ import { ServicesComponent } from './services/services.component';
 import { AboutComponent } from './about/about.component';
 import { ServicesDialogComponent } from './services-dialog/services-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     ServicesComponent,
     AboutComponent,
-    ServicesDialogComponent
+    ServicesDialogComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
