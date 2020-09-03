@@ -28,6 +28,7 @@ import { AboutComponent } from './about/about.component';
 import { ServicesDialogComponent } from './services-dialog/services-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +51,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
