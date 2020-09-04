@@ -67,7 +67,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 .services mat-card{
   background-color: #4bacb8;
   color: white;
-  margin-top: 5%;
+  margin-top: 1%;
 }
 
 .dialog mat-card{

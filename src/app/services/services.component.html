@@ -58,20 +58,23 @@
     <mat-card-content>
       <form [formGroup]='orderForm' (ngSubmit)="openDialog()" class="order-form">
 
-
+        <h1>Services</h1>
         <div *ngFor= "let data of orderData; let i = index">
           <input type="checkbox" [value]='data.value' (change)="onCheckboxChange($event)" >
           {{  data.serviceName }}
           {{  data.serviceCost }}
         </div>
         <br>
+        <hr>
+        <h1>Standard Fees</h1>
         Parts: <input type="text" placeholder="Enter Value">
         <br>
         <br>
         Labor: <input type="text" placeholder="Hours@ $50/hour">
         <br>
         <br>
-        <button mat-raised-button (click)="openDialog()">Submit Order</button>
+        <hr>
+        <button mat-raised-button (click)="openDialog()">Calculate</button>
 
       </form>
     </mat-card-content>
