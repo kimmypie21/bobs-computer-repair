@@ -52,21 +52,31 @@
 -->
 
 
+<div fxFlex class="services">
 
-  <form [formGroup]='orderForm' (ngSubmit)="openDialog()" class="order-form">
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]='orderForm' (ngSubmit)="openDialog()" class="order-form">
 
-    <div *ngFor= "let data of orderData; let i = index">
-      <label>
-        <input type="checkbox" [value]='data.value' (change)="onCheckboxChange($event)">
-        {{ data.serviceName }}
-        {{ data.serviceCost }}
-      </label>
-    </div>
 
-    <button mat-raised-button (click)="openDialog()">Submit Your Order</button>
+        <div *ngFor= "let data of orderData; let i = index">
+          <input type="checkbox" [value]='data.value' (change)="onCheckboxChange($event)" >
+          {{  data.serviceName }}
+          {{  data.serviceCost }}
+        </div>
+        <br>
+        Parts: <input type="text" placeholder="Enter Value">
+        <br>
+        <br>
+        Labor: <input type="text" placeholder="Hours@ $50/hour">
+        <br>
+        <br>
+        <button mat-raised-button (click)="openDialog()">Submit Order</button>
 
-  </form>
-
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
 
 
 

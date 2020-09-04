@@ -24,8 +24,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .logo{
-
   margin: 2%;
+}
+
+.logo h1{
+  font-size: 1em;
 }
 
 .services{
@@ -52,12 +55,27 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
   text-align: center;
   background-color: #4bacb8;
   color: white;
+  margin-top: 5%;
 }
 .minions mat-card{
   text-align: center;
   background-color: #4bacb8;
   color: white;
+  margin-top: 5%;
 }
+
+.services mat-card{
+  background-color: #4bacb8;
+  color: white;
+  margin-top: 5%;
+}
+
+.dialog mat-card{
+  background-color: #4bacb8;
+  color: white;
+  text-align: center;
+}
+
 
 mat-card img{
   width: 80%;

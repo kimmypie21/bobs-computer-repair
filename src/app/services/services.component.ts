@@ -11,8 +11,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesDialogComponent } from '../services-dialog/services-dialog.component';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { FormBuilder, FormGroup, FormArray, FormControl} from '@angular/forms';
-
+import { FormBuilder, FormGroup, FormArray, FormControl, CheckboxControlValueAccessor} from '@angular/forms';
 
 
 @Component({
@@ -34,42 +33,46 @@ export class ServicesComponent  {
     {serviceName: "Disk Clean-up" , serviceCost: "$149.99 "}
   ];
 
-
-
   constructor( private fb: FormBuilder, public dialog: MatDialog) {
     this.orderForm = this.fb.group({
       orderArray: this.fb.array([])
     })
   }
+
   openDialog(){
     this.dialog.open(ServicesDialogComponent),
     console.log(this.orderForm.value);
   }
 
-  onCheckboxChange(e){
+
+  onCheckboxChange(event){
     const orderArray: FormArray = this.orderForm.get('orderArray')as FormArray;
-      if (e.target.checked){
-        orderArray.push(new FormControl(e.target.value));
+      if (event.target.checked){
+        orderArray.push(new FormControl(event.target.value));
       }else{
         let i: number = 0;
         orderArray.controls.forEach((item: FormControl)=>{
-          if (item.value == e.target.value){
+          if (item.value == event.target.value){
             orderArray.removeAt(i);
             return;
           }
           i++;
         });
       }
-  }
+
+    }
+
 
 
   ngOnInit(): void {
 
-  }
-
-
+    }
 
   }
+
+
+
+
 
 
 
