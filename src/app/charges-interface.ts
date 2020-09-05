@@ -1,4 +1,4 @@
-    /*
+/*
 ============================================
 ; Title: Bob's Computer Repair Shop
 ; Author: Kimberly Pierce
@@ -7,3 +7,9 @@
 ; Description: Bob's Computer Repair Shop
 ;===========================================
 */
+
+
+export interface iServices {
+  serviceName: string;
+  serviceCost: number;
+}

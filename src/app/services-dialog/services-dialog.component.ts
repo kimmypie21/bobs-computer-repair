@@ -8,7 +8,7 @@
 ;===========================================
 */
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Inject } from '@angular/core';
 
@@ -18,6 +18,7 @@ import { Inject } from '@angular/core';
   styleUrls: ['./services-dialog.component.css']
 })
 export class ServicesDialogComponent implements OnInit {
+
 
 
   constructor(private dialogRef:MatDialogRef<ServicesDialogComponent>,@Inject(MAT_DIALOG_DATA)data) {

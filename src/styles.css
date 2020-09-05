@@ -76,6 +76,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
   text-align: center;
 }
 
+.invoice mat-card{
+  background-color: #4bacb8;
+  color: white;
+  text-align: center;
+  margin-top: 7%;
+
+}
 
 mat-card img{
   width: 80%;
